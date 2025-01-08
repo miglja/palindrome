@@ -12,13 +12,19 @@ function Phrase(content) {
 
     // Returns content processed for palidrome testing
     this.processedContent = function processedContent() {
-        return this.content.toLowerCase();
+        return this.letters().toLowerCase();
+    }
+
+    // Returns the letters in the content.
+    this.letters = function letters() {
+        return this.content.replace(/[^a-z]/ig, "");
     }
 
     // Returns true if the phrase is a palindrome,
     // false otherwise
     this.palindrome = function palindrome() {
-        return this.processedContent() === 
-            this.processedContent().reverse();
+        return !!this.letters() 
+                && this.processedContent() === 
+                   this.processedContent().reverse();
     }
 }
