@@ -20,9 +20,24 @@ describe("Phrase", function() {
             assert(mixedCase.palindrome());
         });
 
+        it("should return true for a numeric palindrome", function() {
+            let mixedCase = new Phrase("1234321");
+            assert(mixedCase.palindrome());
+        });
+
+        it("should return true for a mixed-type palindrome", function() {
+            let mixedType = new Phrase("Mom121mom");
+            assert(mixedType.palindrome());
+        });
+
         it("should return true for a palindrome with punctuation", function() {
             let punctuatedPalindrome = new Phrase ("Madam, I'm Adam.");
             assert(punctuatedPalindrome.palindrome());
+        });
+
+        it("should return false for entry with no letters", function() {
+            let noLettersPalindrome = new Phrase (".,=!");
+            assert(!noLettersPalindrome.palindrome());
         });
     });
 

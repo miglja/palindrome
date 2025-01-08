@@ -17,7 +17,7 @@ function Phrase(content) {
 
     // Returns the letters in the content.
     this.letters = function letters() {
-        return this.content.replace(/[^a-z]/ig, "");
+        return this.content.replace(/[^a-z0-9]/ig, "");
     }
 
     // Returns true if the phrase is a palindrome,
