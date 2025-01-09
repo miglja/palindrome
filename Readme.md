@@ -5,3 +5,16 @@ This is a sample (unpublished) NPM module created in [*Learn Enough JavaScript t
 This does differ from Hartl's version in that I used a regex replace rather than matching on an array and joining, and I use an && to prevent matching on an empty string rather than ||.
 
 Also added functionality for detecting numeric and mixed-type palindromes (and testing to support it).
+
+
+The module can be used as follows:
+
+```
+$ npm install --global mgj-palindrome
+$ vim test.js
+let Phrase = require("mgj-palindrome");
+let napoleonsLament = new Phrase("Able was I, ere I saw Elba.");
+console.log(napoleonsLament.palindrome());
+$ node test.js
+true
+```
